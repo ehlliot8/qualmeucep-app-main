@@ -2,14 +2,16 @@ import { DefaultTheme } from 'react-native-paper';
 
 
 const darkScheme = {
-  ...DefaultTheme,
-  colors: {
-    ...DefaultTheme.colors,
-    primaryContainer: '#21222c', 
-    secondaryContainer: '#C3EAE5', 
-    secondary: '#5DEBD7',
-    tertiary: '#21222c', 
+  COLORS:{
+    BACKGROUND: '#21222c', 
+    
+    SECOUNT_CONTAINER: '#C3EAE5', 
+    BUTTON: '#5DEBD7',
+    TEXT: '#21222c',
   },
+  FONTS: {
+    REGULAR:'suposto'
+  }
 };
 
 export default darkScheme;

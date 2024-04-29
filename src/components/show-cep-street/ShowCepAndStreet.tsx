@@ -1,10 +1,12 @@
 import React from 'react';
 import { CepResponse } from '../../interface/ICepResponse';
 import PreferencesContext from '../../theme/preferencesContext';
-import BtnCopyeCep from '../btn-copy/BtnCopyedCep'; 
+import BtnCopyeCep from '../btn-copy/BtnCopyCep'; 
 
 import { SecountContainer, TextInfo, ContainerInfo } from './styles';
-import { View } from 'react-native';
+import { View, Text} from 'react-native';
+import darkScheme from '../../theme/darkScheme';
+import lightScheme from '../../theme/lightScheme';
 type Props = {
     setCepResponse: any;
     cepResponse: CepResponse[];
@@ -13,7 +15,7 @@ type Props = {
 const ShowCepAndStreet = (props: Props) => {
 
     const { isThemeDark } = React.useContext(PreferencesContext);
-    const secountContainerBackground = isThemeDark ? '#98EECC' : '#98EECC';
+    const secountContainerBackground = isThemeDark  ? darkScheme.COLORS.SECOUNT_CONTAINER : lightScheme.COLORS.SECOUNT_CONTAINER;
     return (
         <SecountContainer style={ { backgroundColor: secountContainerBackground }}>
            
@@ -22,7 +24,7 @@ const ShowCepAndStreet = (props: Props) => {
                 
                     <View>
                         <TextInfo>{item.cep}</TextInfo>
-                        <TextInfo numberOfLines={1} ellipsizeMode='tail'>{item.street}</TextInfo>
+                        <Text numberOfLines={1} ellipsizeMode='tail'>{item.street}</Text>
                     </View>
 
                     <View>

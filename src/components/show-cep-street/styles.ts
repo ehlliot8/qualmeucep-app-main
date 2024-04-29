@@ -7,18 +7,22 @@ export const SecountContainer = styled.View`
     border-radius: 30px;
     align-items: center;
     padding: 5px;
-    padding-top: 10px; /* paddingVertical */
-    padding-bottom: 10px; /* paddingVertical */
-    justify-content: flex-start;
+    justify-content: center;
+    margin-top:20px;
 `;
 
 export const TextInfo = styled.Text`
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
 `;
 export const ContainerInfo  = styled.View`
-    font-size: 25px;
-    font-weight: bold;
+        display:'flex';
+        width:100%;
+        flex-direction: row;
+        gap:1;
+        padding:20px;
+        margin-top: 20;
+        justify-content: space-between;
 `;
 
 

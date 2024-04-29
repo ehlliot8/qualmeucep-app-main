@@ -1,14 +1,15 @@
-import { DefaultTheme } from 'react-native-paper';
+export default {
+  COLORS: {
+    BACKGROUND: '#FFFFFF',
 
-const lightScheme = {
-  ...DefaultTheme,
-  colors: {
-    ...DefaultTheme.colors,
-    primaryContainer: '#FFFFFF', 
-    secondaryContainer: '#C3EAE5', 
-    secondary: '#5DEBD7',
-    tertiary: '#21222c', 
+    SECOUNT_CONTAINER: '#C3EAE5',
+    BUTTON: '#5DEBD7',
+    TEXT: '#21222c',
+
   },
+  FONTS: {
+    REGULAR:'suposto'
+  }
+  
 };
 
-export default lightScheme; 

@@ -7,6 +7,7 @@ import TabRoutes from './tab.routes';
 import DarkScheme from '../theme/darkScheme';
 import LightScheme from '../theme/lightScheme';
 import merge from 'deepmerge';
+import { ThemeProvider } from 'styled-components/native';
 
 export default function Routes() {
     // Combinando os temas padrão do react-native-paper com os temas personalizados
@@ -35,11 +36,11 @@ export default function Routes() {
 
     return (
         <PreferencesContext.Provider value={preferences}>
-            <PaperProvider theme={theme}>
+            <ThemeProvider theme={theme}>
                 <NavigationContainer theme={theme}>
                     <TabRoutes />
                 </NavigationContainer>
-            </PaperProvider>
+            </ThemeProvider>
         </PreferencesContext.Provider>
     );
 }

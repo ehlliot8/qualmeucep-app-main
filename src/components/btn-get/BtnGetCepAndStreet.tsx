@@ -17,6 +17,8 @@ import { getCep } from "../../../service/getCepAndStreet";
 import PreferencesContext from "../../theme/preferencesContext";
 
 import { Container, ButtonStyled, ButtonText } from "./styles";
+import darkScheme from "../../theme/darkScheme";
+import lightScheme from "../../theme/lightScheme";
 
 
 type Props = {
@@ -103,7 +105,7 @@ const BtnGetCep = (props: Props) => {
     }, [click]);
 
     const { isThemeDark } = React.useContext(PreferencesContext);
-    const buttonColor = isThemeDark ? '#98EECC' : '#98EECC';
+    const buttonColor = isThemeDark  ? darkScheme.COLORS.BUTTON : lightScheme.COLORS.BUTTON;
     return (
         <Container>
             <ActivityIndicator animating={loading} color={colors.primary} />

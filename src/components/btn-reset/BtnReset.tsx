@@ -1,5 +1,4 @@
-import { Button } from "react-native-paper";
-import { StyleSheet, Image } from "react-native";
+import { ButtonStyled, ImgIcon } from "./style";
 
 type Props = {
 
@@ -13,28 +12,12 @@ const BtnReset = (props: Props) => {
     const iconColor = props.cepResponseLength > 0 ? '#98EECC' : '#B4B4B8';
 
     return (
-        <Button
+        <ButtonStyled
             onPress={reset}
-            contentStyle={styles.buttonContent}
         >
-            <Image style={[styles.imgIcon, { tintColor: iconColor }]} source={require('../../../assets/reset.png')} />
-        </Button>
+            <ImgIcon style={{ tintColor: iconColor }} source={require('../../../assets/reset.png')} />
+        </ButtonStyled>
     );
 };
 
 export default BtnReset;
-
-const styles = StyleSheet.create({
-    buttonContent: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop:40
-
-    },
-    imgIcon: {
-        height:30,
-        width:30,
-    }
-
-});

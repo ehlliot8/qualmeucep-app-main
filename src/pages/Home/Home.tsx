@@ -8,11 +8,14 @@ import ShowCepAndStreet from '../../components/show-cep-street/ShowCepAndStreet'
 import HeaderLogo from '../../components/logo-header/HearderLogo';
 import BtnGetCep from '../../components/btn-get/BtnGetCepAndStreet';
 import BtnReset from '../../components/btn-reset/BtnReset';
+import darkScheme from '../../theme/darkScheme';
+import lightScheme from '../../theme/lightScheme';
 
 export default function Home() {
 
   const { isThemeDark } = React.useContext(PreferencesContext)
-  const homeBackGroundColor = isThemeDark ? '#21222c' : '#ffffff';
+  
+  const homeBackGroundColor = isThemeDark ? darkScheme.COLORS.BACKGROUND : lightScheme.COLORS.BACKGROUND;
 
   const [cepResponse, setCepResponse] = useState<CepResponse[]>([]);
 
