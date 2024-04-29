@@ -1,8 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Feather } from '@expo/vector-icons';
-import { PreferencesContext } from '../theme/preferencesContext'; // Importe o contexto de preferências
-import ThemeToggleButton from '../components/ThemeToggleButton'; // Importe o componente ThemeToggleButton
+import ThemeToggleButton from '../pages/ThemePageToggle/ThemeToggleButton';
 import SearchRecent from '../pages/SearchRecent/SearchRecent';
 import Home from '../pages/Home/Home';
 

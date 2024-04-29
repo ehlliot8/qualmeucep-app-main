@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Switch as PaperSwitch } from 'react-native-paper';
-import { PreferencesContext } from '../theme/preferencesContext'; 
+import  PreferencesContext  from '../../theme/preferencesContext'; 
 
 const MyComponentWithTheme = () => {
   const { isThemeDark, toggleTheme } = useContext(PreferencesContext);
@@ -9,7 +9,7 @@ const MyComponentWithTheme = () => {
 
   const onToggleSwitch = () => {
     setIsSwitchOn(!isSwitchOn);
-    toggleTheme(); // Toggle the theme when the switch is toggled
+    toggleTheme(); 
   };
 
   const themeTextStyle = {

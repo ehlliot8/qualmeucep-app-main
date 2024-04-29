@@ -1,13 +1,22 @@
+import React from "react";
 import { useEffect, useState } from "react";
-import  Coordenadas  from "../interface/ICoordenadas";
-import  calcularParesDeLocalizacao  from "../../service/getCoords";
-import { CepResponse } from "../interface/ICepResponse";
-import { getCep } from "../../service/getCepAndStreet";
-import { ActivityIndicator, Button, useTheme } from 'react-native-paper';
+import { Alert } from "react-native";
+
+import { ActivityIndicator, useTheme } from 'react-native-paper';
 import * as Location from 'expo-location'
-import { Alert, StyleSheet } from "react-native";
+
 import useAsyncStorage from '@react-native-async-storage/async-storage'
 import AsyncStorage from "@react-native-async-storage/async-storage";
+
+import { CepResponse } from "../../interface/ICepResponse";
+import Coordenadas from "../../interface/ICoordenadas";
+
+import calcularParesDeLocalizacao from "../../../service/getCoords";
+import { getCep } from "../../../service/getCepAndStreet";
+
+import PreferencesContext from "../../theme/preferencesContext";
+
+import { Container, ButtonStyled, ButtonText } from "./styles";
 
 
 type Props = {
@@ -66,15 +75,15 @@ const BtnGetCep = (props: Props) => {
 
             props.setCepResponse(uniqueCepResponse);
 
-            
-            const jsonValue = await AsyncStorage.getItem('@myData') ?? '';
+
+            const jsonValue = await AsyncStorage.getItem('@tableceps') ?? '[]';
 
 
             let data = []
             try {
                 data = JSON.parse(jsonValue)
+                await useAsyncStorage.setItem('@tableceps', JSON.stringify([...uniqueCepResponse, ...data]));
             } catch (error) {
-                await useAsyncStorage.setItem('@myData', JSON.stringify([uniqueCepResponse, ...data]));
 
             }
 
@@ -93,25 +102,23 @@ const BtnGetCep = (props: Props) => {
         fetchData();
     }, [click]);
 
-
+    const { isThemeDark } = React.useContext(PreferencesContext);
+    const buttonColor = isThemeDark ? '#98EECC' : '#98EECC';
     return (
-        <>
+        <Container>
             <ActivityIndicator animating={loading} color={colors.primary} />
-            
-            <Button mode="contained-tonal" 
-            style={[styles.btngetcep, { backgroundColor: colors.primary }]}
-             onPress={stateClick}> Buscar
-             </Button>
-        </>
+
+            <ButtonStyled
+                style={ { backgroundColor: buttonColor }}
+                onPress={stateClick}
+                > 
+                <ButtonText>Buscar</ButtonText>
+            </ButtonStyled>
+        </Container>
+
     );
 };
 
-const styles = StyleSheet.create({
-    btngetcep: {
-        marginBottom: '2%',
-    },
-
-});
 
 export default BtnGetCep;
 

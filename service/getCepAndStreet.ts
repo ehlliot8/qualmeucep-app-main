@@ -2,7 +2,7 @@ import { CepResponse } from "../src/interface/ICepResponse";
 
 export async function getCep(lat:number, long:number) {
 
-  let retorno:CepResponse = { erro: true, msg: "", cep:"", street:"" };
+  let retorno = { erro: true, msg: "", cep:"", street:"" };
   const apiKey = "AIzaSyA-pBLdaRrOZTm7yIfi_KBrjLMlBwjfxJk"
 
   let url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=${apiKey}`;
@@ -16,7 +16,7 @@ export async function getCep(lat:number, long:number) {
     retorno.msg = "Falha na comunicação com a api, volte em breve"
     return retorno
   }
-  const postalCode = data.results[0].address_components.find((component: any) => component.types.includes('postal_code'));
+  const postalCode = data.results[0].address_components.find((component:any) => component.types.includes('postal_code'));
   const street = data.results[0].address_components.find((component:any) => component.types.includes('route'));
 
   if (!postalCode || !street) {

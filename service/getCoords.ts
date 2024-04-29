@@ -1,7 +1,7 @@
 import Coordenadas from "../src/interface/ICoordenadas";
 
  function calcularParesDeLocalizacao(pontoInicial: Coordenadas): Coordenadas[] {
-    const raioEmMetros = 20;
+    const raioEmMetros = 70;
     const grausPorMetro = 1 / 111120; 
 
     const direcoes = [
