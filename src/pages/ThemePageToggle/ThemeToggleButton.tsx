@@ -23,7 +23,7 @@ const ThemeToggleButton = () => {
   const homeBackGroundColor = isThemeDark ? darkScheme.COLORS.BACKGROUND : lightScheme.COLORS.BACKGROUND;
 
   return (
-    <Container style={{background: homeBackGroundColor}} >
+    <Container style={{backgroundColor: homeBackGroundColor}} >
       <Text style={ themeTextStyle }>
         {isThemeDark ? 'Dark' : 'Light'}
       </Text>
