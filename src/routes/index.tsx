@@ -10,19 +10,19 @@ import merge from 'deepmerge';
 import { ThemeProvider } from 'styled-components/native';
 
 export default function Routes() {
-    // Combinando os temas padrão do react-native-paper com os temas personalizados
+   
     const CombinedDefaultTheme = merge(LightScheme, NavigationDefaultTheme);
     const CombinedDarkTheme = merge(DarkScheme, NavigationDarkTheme);
 
-    // Definindo o estado para o tema escuro ou claro
+    
     const [isThemeDark, setIsThemeDark] = React.useState(false);
 
-    // Função para alternar entre os temas
+   
     const toggleTheme = React.useCallback(() => {
         setIsThemeDark(!isThemeDark);
     }, [isThemeDark]);
 
-    // Contexto de preferências com o estado do tema e a função para alterná-lo
+    
     const preferences = React.useMemo(
         () => ({
             toggleTheme,
@@ -31,12 +31,12 @@ export default function Routes() {
         [toggleTheme, isThemeDark]
     );
 
-    // Selecionando o tema com base no estado
+
     const theme = isThemeDark ? CombinedDarkTheme : CombinedDefaultTheme;
 
     return (
         <PreferencesContext.Provider value={preferences}>
-            <ThemeProvider theme={theme}>
+            <ThemeProvider theme={theme} >
                 <NavigationContainer theme={theme}>
                     <TabRoutes />
                 </NavigationContainer>

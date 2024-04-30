@@ -11,11 +11,12 @@ const BtnReset = (props: Props) => {
     }
     const iconColor = props.cepResponseLength > 0 ? '#98EECC' : '#B4B4B8';
 
+    const iconReset = require('../../../layout/reset.png');
     return (
         <ButtonStyled
             onPress={reset}
         >
-            <ImgIcon style={{ tintColor: iconColor }} source={require('../../../assets/reset.png')} />
+            <ImgIcon style={{ tintColor: iconColor }}  source={iconReset} />
         </ButtonStyled>
     );
 };

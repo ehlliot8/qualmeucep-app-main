@@ -2,7 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import { Container } from './styles';
 import { useState } from 'react';
 import { CepResponse } from '../../interface/ICepResponse';
+
+
 import React from 'react';
+
 import PreferencesContext from '../../theme/preferencesContext';
 import ShowCepAndStreet from '../../components/show-cep-street/ShowCepAndStreet';
 import HeaderLogo from '../../components/logo-header/HearderLogo';
@@ -10,7 +13,6 @@ import BtnGetCep from '../../components/btn-get/BtnGetCepAndStreet';
 import BtnReset from '../../components/btn-reset/BtnReset';
 import darkScheme from '../../theme/darkScheme';
 import lightScheme from '../../theme/lightScheme';
-
 export default function Home() {
 
   const { isThemeDark } = React.useContext(PreferencesContext)

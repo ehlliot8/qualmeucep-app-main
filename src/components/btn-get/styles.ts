@@ -10,13 +10,13 @@ export const ButtonStyled = styled.TouchableOpacity`
     border-radius: 15px;
     background-color: #98EECC; 
     padding: 10px; 
-    height: 50px;
+    height: 40px;
     width:100px;
     justify-content:center;
 `;
 
 export const ButtonText = styled.Text`
-text-align:center;
+    text-align:center;
     justify-content:center;
 `;
 
