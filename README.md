@@ -1,4 +1,4 @@
-# Buscador de CEP
+# MeuCep
 
 Este é um aplicativo simples desenvolvido com TypeScript, React Native e Expo, que permite aos usuários buscar por CEPs e copiá-los para a área de transferência.
 
