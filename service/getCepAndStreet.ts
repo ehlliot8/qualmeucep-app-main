@@ -1,5 +1,3 @@
-import { CepResponse } from "../src/interface/ICepResponse";
-
 export async function getCep(lat:number, long:number) {
 
   let retorno = { erro: true, msg: "", cep:"", street:"" };
