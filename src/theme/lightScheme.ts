@@ -3,8 +3,8 @@ export default {
   COLORS: {
     BACKGROUND: '#FFFFFF',
 
-    SECOUNT_CONTAINER: '#C3EAE5',
-    BUTTON: '#5DEBD7',
+    SECOUNT_CONTAINER: '#98EECC',
+    BUTTON: '#98EECC',
     TEXT: '#21222c',
   }
 };
