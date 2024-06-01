@@ -116,7 +116,7 @@ const BtnGetCep = (props: Props) => {
     const buttonColor = isThemeDark  ? darkScheme.COLORS.BUTTON : lightScheme.COLORS.BUTTON;
     return (
         <Container>
-            <ActivityIndicator animating={loading} color={colors.primary} />
+            <ActivityIndicator animating={loading} color={'#5DEBD7'} />
 
             <ButtonStyled
                 style={ { backgroundColor: buttonColor }}
