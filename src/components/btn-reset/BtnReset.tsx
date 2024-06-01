@@ -9,7 +9,7 @@ const BtnReset = (props: Props) => {
     const reset = () => {
         props.resetFunction()
     }
-    const iconColor = props.cepResponseLength > 0 ? '#98EECC' : '#B4B4B8';
+    const iconColor = props.cepResponseLength > 0 ? '#5DEBD7' : '#B4B4B8';
 
     const iconReset = require('../../../layout/reset.png');
     return (
