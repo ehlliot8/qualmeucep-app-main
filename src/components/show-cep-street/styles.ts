@@ -20,7 +20,7 @@ export const ContainerInfo  = styled.View`
         width:100%;
         flex-direction: row;
         padding:20px;
-        align-items:'center';
+        margin-top: 20px;
         justify-content: space-between;
 `;
 
