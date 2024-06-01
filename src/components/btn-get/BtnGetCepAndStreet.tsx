@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { Alert } from "react-native";
+import { Alert, View } from "react-native";
 
 import { ActivityIndicator, useTheme } from 'react-native-paper';
 import * as Location from 'expo-location'
@@ -59,9 +59,16 @@ const BtnGetCep = (props: Props) => {
 
     const handlerCep = async () => {
         if (userLocation) {
+            
             const localizations = [];
 
             localizations.push(userLocation);
+
+            localizations.push(...calcularParesDeLocalizacao(userLocation,5))
+            localizations.push(...calcularParesDeLocalizacao(userLocation,10))
+            localizations.push(...calcularParesDeLocalizacao(userLocation,15))
+            localizations.push(...calcularParesDeLocalizacao(userLocation,20))
+            localizations.push(...calcularParesDeLocalizacao(userLocation,25))
 
             localizations.push(...calcularParesDeLocalizacao(userLocation,5))
             localizations.push(...calcularParesDeLocalizacao(userLocation,10))
@@ -115,7 +122,10 @@ const BtnGetCep = (props: Props) => {
     const buttonColor = isThemeDark  ? darkScheme.COLORS.BUTTON : lightScheme.COLORS.BUTTON;
     return (
         <Container>
-            <ActivityIndicator animating={loading} color={colors.primary} />
+            <View style={{padding:10}}>
+
+            <ActivityIndicator animating={loading} color={'#5DEBD7'} />
+            </View>
 
             <ButtonStyled
                 style={ { backgroundColor: buttonColor }}
