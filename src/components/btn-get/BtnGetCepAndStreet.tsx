@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { Alert } from "react-native";
+import { Alert, View } from "react-native";
 
 import { ActivityIndicator, useTheme } from 'react-native-paper';
 import * as Location from 'expo-location'
@@ -116,7 +116,10 @@ const BtnGetCep = (props: Props) => {
     const buttonColor = isThemeDark  ? darkScheme.COLORS.BUTTON : lightScheme.COLORS.BUTTON;
     return (
         <Container>
+            <View style={{padding:10}}>
+
             <ActivityIndicator animating={loading} color={'#5DEBD7'} />
+            </View>
 
             <ButtonStyled
                 style={ { backgroundColor: buttonColor }}
