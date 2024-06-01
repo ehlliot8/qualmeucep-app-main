@@ -5,7 +5,7 @@ export  const Container = styled.View`
     height: 100%;
     width: 100%;
     align-items: center;
-    paddingVertical:10
+    paddingVertical:10px
     
 `;
 export  const Text = styled.Text `

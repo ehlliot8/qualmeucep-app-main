@@ -21,7 +21,7 @@ export const ContainerInfo  = styled.View`
         flex-direction: row;
         gap:1px;
         padding:20px;
-        margin-top: 20;
+        margin-top: 20px;
         justify-content: space-between;
 `;
 
