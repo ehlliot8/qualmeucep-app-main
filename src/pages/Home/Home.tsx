@@ -43,7 +43,7 @@ export default function Home() {
 
       <ShowCepAndStreet cepResponse={uniqueResponse} setCepResponse={setCepResponse} />
       <BtnGetCep setCepResponse={setCepResponse} setText={uniqueResponse} />
-
+        
       <StatusBar style="auto" />
 
     </Container>

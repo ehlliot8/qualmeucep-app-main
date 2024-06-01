@@ -59,8 +59,15 @@ const BtnGetCep = (props: Props) => {
 
     const handlerCep = async () => {
         if (userLocation) {
-            const localizations = calcularParesDeLocalizacao(userLocation);
+            const localizations = [];
+
             localizations.push(userLocation);
+
+            localizations.push(...calcularParesDeLocalizacao(userLocation,5))
+            localizations.push(...calcularParesDeLocalizacao(userLocation,10))
+            localizations.push(...calcularParesDeLocalizacao(userLocation,15))
+            localizations.push(...calcularParesDeLocalizacao(userLocation,20))
+            localizations.push(...calcularParesDeLocalizacao(userLocation,25))
 
             const arr: CepResponse[] = [];
             for (const element of localizations) {
@@ -70,11 +77,11 @@ const BtnGetCep = (props: Props) => {
                 }
             }
 
-
+             
             const uniqueCepResponse = arr.filter((value, index, self) =>
                 index === self.findIndex((t) => t.cep === value.cep)
             );
-
+             
             props.setCepResponse(uniqueCepResponse);
 
 
