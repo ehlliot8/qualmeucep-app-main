@@ -27,7 +27,7 @@ const ShowCepAndStreet = (props: Props) => {
                         <Text numberOfLines={1} ellipsizeMode='tail'>{item.street}</Text>
                     </View>
 
-                    <View>
+                    <View style={{marginTop:10}}>
                         <BtnCopyeCep cep={item.cep} />
                     </View>
                 </ContainerInfo>

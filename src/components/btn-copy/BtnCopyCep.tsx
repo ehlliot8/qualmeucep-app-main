@@ -1,7 +1,8 @@
 import React from 'react';
-import { Alert } from 'react-native';
-import { IconButton } from 'react-native-paper';
-import * as Clipboard from 'expo-clipboard'; 
+import { Alert, View } from 'react-native';
+
+import * as Clipboard from 'expo-clipboard';
+import { AntDesign } from '@expo/vector-icons';
 
 type Props = {
   cep: string;
@@ -9,17 +10,15 @@ type Props = {
 
 const BtnCopyCep = (props: Props) => {
   const handleCopyClick = () => {
-      Clipboard.setString(props.cep);
-      Alert.alert('Copiado com sucesso');
-    }
-  
+    Clipboard.setString(props.cep);
+    Alert.alert('Copiado com sucesso');
+  }
+
 
   return (
-      <IconButton
-        icon="content-copy"
-        onPress={handleCopyClick}
-        disabled={false}
-      />
+    <View>
+      <AntDesign name="copy1" size={24} color="black" onPress={handleCopyClick} />
+    </View>
   );
 };
 

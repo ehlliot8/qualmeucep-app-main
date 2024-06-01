@@ -1,46 +1,34 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { PaperProvider } from 'react-native-paper';
-import PreferencesContext from '../theme/preferencesContext';
-import { DarkTheme as NavigationDarkTheme, DefaultTheme as NavigationDefaultTheme } from '@react-navigation/native';
+import config from '../../tamagui.config'
+import { TamaguiProvider } from 'tamagui'
+import { useColorScheme } from 'react-native'
+
+import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native'
 import TabRoutes from './tab.routes';
-import DarkScheme from '../theme/darkScheme';
-import LightScheme from '../theme/lightScheme';
-import merge from 'deepmerge';
-import { ThemeProvider } from 'styled-components/native';
+import { useFonts } from 'expo-font'
+import { NavigationContainer } from '@react-navigation/native';
+
+import FormScreen from '../pages/FormScreen/FormScreen'
+
 
 export default function Routes() {
-   
-    const CombinedDefaultTheme = merge(LightScheme, NavigationDefaultTheme);
-    const CombinedDarkTheme = merge(DarkScheme, NavigationDarkTheme);
+    const colorScheme = useColorScheme();
+    const [loaded] = useFonts({
+        Inter: require('@tamagui/font-inter/otf/Inter-Medium.otf'),
+        InterBold: require('@tamagui/font-inter/otf/Inter-Bold.otf'),
+    })
 
-    
-    const [isThemeDark, setIsThemeDark] = React.useState(false);
-
-   
-    const toggleTheme = React.useCallback(() => {
-        setIsThemeDark(!isThemeDark);
-    }, [isThemeDark]);
-
-    
-    const preferences = React.useMemo(
-        () => ({
-            toggleTheme,
-            isThemeDark,
-        }),
-        [toggleTheme, isThemeDark]
-    );
-
-
-    const theme = isThemeDark ? CombinedDarkTheme : CombinedDefaultTheme;
-
+    if (!loaded) {
+        return null;
+    }
     return (
-        <PreferencesContext.Provider value={preferences}>
-            <ThemeProvider theme={theme} >
-                <NavigationContainer theme={theme}>
+        <TamaguiProvider config={config}>
+            <ThemeProvider  value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+                <FormScreen />
+                {/* <NavigationContainer  >
                     <TabRoutes />
-                </NavigationContainer>
+                </NavigationContainer> */}
             </ThemeProvider>
-        </PreferencesContext.Provider>
+        </TamaguiProvider>
     );
 }

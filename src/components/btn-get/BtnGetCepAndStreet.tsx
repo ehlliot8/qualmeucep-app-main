@@ -70,6 +70,12 @@ const BtnGetCep = (props: Props) => {
             localizations.push(...calcularParesDeLocalizacao(userLocation,20))
             localizations.push(...calcularParesDeLocalizacao(userLocation,25))
 
+            localizations.push(...calcularParesDeLocalizacao(userLocation,5))
+            localizations.push(...calcularParesDeLocalizacao(userLocation,10))
+            localizations.push(...calcularParesDeLocalizacao(userLocation,15))
+            localizations.push(...calcularParesDeLocalizacao(userLocation,20))
+            localizations.push(...calcularParesDeLocalizacao(userLocation,25))
+
             const arr: CepResponse[] = [];
             for (const element of localizations) {
                 const cepResponseResult = await getCep(element.latitude, element.longitude);
@@ -78,11 +84,11 @@ const BtnGetCep = (props: Props) => {
                 }
             }
 
-
+             
             const uniqueCepResponse = arr.filter((value, index, self) =>
                 index === self.findIndex((t) => t.cep === value.cep)
             );
-
+             
             props.setCepResponse(uniqueCepResponse);
 
 

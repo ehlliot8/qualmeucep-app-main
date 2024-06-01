@@ -1,5 +1,4 @@
 import Coordenadas from "../src/interface/ICoordenadas";
-
 function calcularParesDeLocalizacao(pontoInicial: Coordenadas, raioEmMetros: number = 70): Coordenadas[] {
     const grausPorMetro = 1 / 111120;
 
@@ -15,13 +14,18 @@ function calcularParesDeLocalizacao(pontoInicial: Coordenadas, raioEmMetros: num
         { lat: deslocamentoLat, lon: -deslocamentoLon }, // Noroeste
         { lat: -deslocamentoLat, lon: deslocamentoLon }, // Sudeste
         { lat: -deslocamentoLat, lon: -deslocamentoLon } // Sudoeste
-    ];
 
-    const paresDeLocalizacao: Coordenadas[] = direcoes.map(direcao => ({
+    ];
+  
+    const paresDeLocalizacao: Coordenadas[] = [];
+  
+    direcoes.forEach(direcao => {
+      paresDeLocalizacao.push({
         latitude: pontoInicial.latitude + direcao.lat,
         longitude: pontoInicial.longitude + direcao.lon
-    }));
-
+      });
+    });
+  
     return paresDeLocalizacao;
 }
 
