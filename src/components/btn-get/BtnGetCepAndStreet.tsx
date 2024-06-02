@@ -11,8 +11,8 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { CepResponse } from "../../interface/ICepResponse";
 import Coordenadas from "../../interface/ICoordenadas";
 
-import calcularParesDeLocalizacao from "../../../service/getCoords";
-import { getCep } from "../../../service/getCepAndStreet";
+import calcularParesDeLocalizacao from "../../service/getCoords";
+import { getCep } from "../../service/getCepAndStreet";
 
 import PreferencesContext from "../../theme/preferencesContext";
 
