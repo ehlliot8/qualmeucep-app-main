@@ -19,9 +19,8 @@ export const ContainerInfo  = styled.View`
         display:'flex';
         width:100%;
         flex-direction: row;
-        gap:1px;
         padding:20px;
-        margin-top: 20px;
+        align-items:'center';
         justify-content: space-between;
 `;
 
