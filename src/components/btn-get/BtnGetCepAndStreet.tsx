@@ -120,7 +120,9 @@ const BtnGetCep = (props: Props) => {
 
             <ActivityIndicator animating={loading} color={'#5DEBD7'} />
             </View>
+            {/* <View style={{padding:10}}>
 
+            </View> */}
             <ButtonStyled
                 style={ { backgroundColor: buttonColor }}
                 onPress={stateClick}

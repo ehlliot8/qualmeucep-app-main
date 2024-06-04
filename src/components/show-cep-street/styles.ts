@@ -2,7 +2,7 @@ import styled from "styled-components/native";
 
 
 export const SecountContainer = styled.View`
-    height: 300px;
+    height: 30%;
     width: 90%;
     border-radius: 30px;
     align-items: center;
