@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "expo-typescript-basics",
+    "name": "Qual Meu Cep",
     "slug": "expo-typescript-basics",
-    "version": "1.0.1",
+    "version": "1.0.5",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -31,6 +31,7 @@
       "eas": {
         "projectId": "c5c642f5-db86-45d3-88e3-464de4f648f8"
       }
-    }
+    },
+    "owner": "ehlliot5"
   }
 }
