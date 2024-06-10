@@ -1,8 +1,8 @@
 {
   "expo": {
     "name": "Qual Meu Cep",
-    "slug": "expo-typescript-basics",
-    "version": "1.0.5",
+    "slug": "qual-meu-cep",
+    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
